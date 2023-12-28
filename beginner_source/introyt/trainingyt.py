@@ -304,7 +304,7 @@ for epoch in range(EPOCHS):
             vloss = loss_fn(voutputs, vlabels)
             running_vloss += vloss
     
-    avg_vloss = running_vloss / (i + 1)
+    avg_vloss = running_vloss / len(validation_loader)
     print('LOSS train {} valid {}'.format(avg_loss, avg_vloss))
     
     # Log the running loss averaged per batch
